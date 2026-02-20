@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - My Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Create Account</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="detail.html">Details</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h2>Sign Up</h2>
+        
+        <!-- Task 4: Form with :required and :valid styling -->
+        <form action="#" method="POST">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required minlength="2">
+            
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="username">Username *</label>
+            <input type="text" id="username" name="username" required minlength="3">
+            
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required minlength="6">
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+    </div>
+</body>
+</html>

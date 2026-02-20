@@ -1,0 +1,245 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
+    --bg-light: #f4f4f4;
+    --bg-white: #ffffff;
+    --text-main: #333333;
+    --text-light: #7f8c8d;
+    --border-color: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* =========================================
+   Task 2: Interactive States & Transitions
+   ========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    background-color: #d35400;
+    transform: translateY(0);
+}
+
+.btn:focus, input:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Navigation - TOP RIGHT
+   ========================================= */
+
+header {
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--bg-white);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--bg-black);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+}
+
+/* =========================================
+   Task 3: Product List Styling
+   ========================================= */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.product-container {
+    text-align: center;
+}
+
+.product-card {
+    display: inline-block;
+    width: 28%;
+    vertical-align: top;
+    margin: 1.5%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card:nth-child(odd) {
+    background-color: var(--bg-white);
+}
+
+.product-card:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    display: inline;
+}
+
+.price::before {
+    content: "$";
+}
+
+/* =========================================
+   Task 4: Advanced Selectors & Pseudo-elements
+   ========================================= */
+
+.cart-container {
+    min-height: 200px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    border-radius: 10px;
+}
+
+.cart-container:empty::before {
+    content: "Your cart is currently empty.";
+    display: block;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    padding-top: 50px;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input {
+    display: block;
+    margin-bottom: 15px;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:required {
+    border-left: 5px solid var(--accent-color);
+}
+
+input:valid {
+    border-color: #27ae60;
+}
+
+/* =========================================
+   Task 5: Detailed Data Styling
+   ========================================= */
+
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+table td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: #f1f1f1;
+}
+
+.order-history {
+    list-style-type: square;
+    padding-left: 20px;
+    max-width: 500px;
+    margin: 20px auto;
